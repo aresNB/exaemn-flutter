@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import 'package:badwallet_mobile/core/wallet_provider.dart';
+import 'package:badwallet_mobile/features/transfers/transfer_recipient_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -105,7 +106,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   _QuickAction(
                     icon: Icons.send,
                     label: 'Transférer',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const TransferRecipientScreen(),
+                        ),
+                      );
+                    },
                   ),
                   _QuickAction(
                     icon: Icons.receipt_long,

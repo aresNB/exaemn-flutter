@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:badwallet_mobile/core/wallet_provider.dart';
 import 'package:badwallet_mobile/features/dashboard/dashboard_screen.dart';
+import 'package:badwallet_mobile/core/app_colors.dart';
 
 class PhoneInputScreen extends StatefulWidget {
   const PhoneInputScreen({super.key});
@@ -65,7 +66,7 @@ class _PhoneInputScreenState extends State<PhoneInputScreen> {
                 const SizedBox(height: 8),
                 const Text(
                   'Entrez votre numéro de téléphone pour accéder à votre portefeuille',
-                  style: TextStyle(fontSize: 15, color: Colors.grey),
+                  style: TextStyle(fontSize: 15, color: AppColors.textHint),
                 ),
                 const SizedBox(height: 32),
                 TextFormField(
@@ -91,7 +92,7 @@ class _PhoneInputScreenState extends State<PhoneInputScreen> {
                 ),
                 if (_error != null) ...[
                   const SizedBox(height: 12),
-                  Text(_error!, style: const TextStyle(color: Colors.red)),
+                  Text(_error!, style: const TextStyle(color: AppColors.error)),
                 ],
                 const SizedBox(height: 24),
                 SizedBox(
@@ -103,10 +104,15 @@ class _PhoneInputScreenState extends State<PhoneInputScreen> {
                       backgroundColor: const Color(0xFFF59E0B),
                     ),
                     child: _loading
-                        ? const CircularProgressIndicator(color: Colors.white)
+                        ? const CircularProgressIndicator(
+                            color: AppColors.textPrimary,
+                          )
                         : const Text(
                             'Accéder',
-                            style: TextStyle(fontSize: 16, color: Colors.white),
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColors.textPrimary,
+                            ),
                           ),
                   ),
                 ),
