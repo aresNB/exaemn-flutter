@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import 'package:badwallet_mobile/core/wallet_provider.dart';
 import 'package:badwallet_mobile/features/transfers/transfer_recipient_screen.dart';
+import 'package:badwallet_mobile/features/bills/bill_provider_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -118,7 +119,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   _QuickAction(
                     icon: Icons.receipt_long,
                     label: 'Payer',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const BillProviderScreen(),
+                        ),
+                      );
+                    },
                   ),
                   _QuickAction(
                     icon: Icons.history,
